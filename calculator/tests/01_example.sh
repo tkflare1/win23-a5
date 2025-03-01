@@ -29,3 +29,27 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+#Subtraction
+EXPECTED=3
+RESULT=$($CALCULATOR 5 - 2)
+if [[ "$RESULT" -ne "$EXPECTED" ]]; then
+  echo "ERROR! 5 - 2 failed."
+  exit 1
+fi
+
+#Division
+EXPECTED=5
+RESULT=$($CALCULATOR 10 / 2)
+if [[ "$RESULT" -ne "$EXPECTED" ]]; then
+  echo "ERROR! 10 / 2 failed."
+  exit 1
+fi
+
+#Multiplication
+EXPECTED=20
+RESULT=$($CALCULATOR 4 * 5)
+if [[ "$RESULT" -ne "$EXPECTED" ]]; then
+  echo "ERROR! 4 * 5 failed."
+  exit 1
+fi
